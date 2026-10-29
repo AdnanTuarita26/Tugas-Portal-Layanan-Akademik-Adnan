@@ -41,4 +41,4 @@ Pengujian dilakukan dari perangkat mobile karena tidak tersedia laptop. Alat yan
 
 ### Keterbatasan
 - Pemeriksaan Elements, Network, dan accessibility tree pada Browser DevTools desktop belum dilakukan. Sebagai gantinya dipakai Lighthouse dan halaman uji bantu di atas.
-- Uji keyboard (Tab) dan validasi email dilakukan manual pada halaman yang sudah dipublikasikan. (ISI hasil kalau sudah dicoba)
+
