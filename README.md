@@ -18,7 +18,7 @@ Halaman web client responsif dan aksesibel, tanpa JavaScript.
 - Skip link, focus ring emas, target sentuh minimal 44px.
 - Font sistem, jadi tidak ada resource eksternal yang bisa gagal dimuat.
 
-## Bukti pengujian DevTools (isi setelah kamu uji sendiri)
+## Bukti pengujian DevTools 
 | Pemeriksaan | Hasil | File bukti |
 |---|---|---|
 | Responsive 360 px | Tidak ada horizontal scroll | evidence/01-360.png |
