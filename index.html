@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal Layanan Akademik: ajukan surat aktif kuliah, transkrip sementara, dan cuti akademik secara online.">
+  <title>Portal Layanan Akademik | Universitas Pattimura</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <svg class="logo" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+        <rect width="44" height="44" rx="10" fill="#F2B134"/>
+        <path d="M6 28c5-4 9 4 16 0s11 4 16 0" fill="none" stroke="#0B3C49" stroke-width="3" stroke-linecap="round"/>
+        <path d="M22 9 8 17l14 6 14-6z" fill="#0B3C49"/>
+      </svg>
+      <div>
+        <h1>Portal Layanan Akademik</h1>
+        <p class="tagline">Fakultas Sains dan Teknologi, Universitas Pattimura</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <ul class="wrap">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#permohonan">Ajukan Permohonan</a></li>
+    </ul>
+  </nav>
+
+  <main id="konten-utama">
+    <section id="beranda" class="wrap intro" aria-labelledby="judul-beranda">
+      <h2 id="judul-beranda">Urus keperluan akademik tanpa antre</h2>
+      <p>Pilih layanan, isi formulir, dan pantau prosesnya dari ponsel atau komputer. Permohonan yang lengkap biasanya selesai dalam 3 hari kerja.</p>
+    </section>
+
+    <section id="layanan" class="wrap" aria-labelledby="judul-layanan">
+      <h2 id="judul-layanan">Layanan yang tersedia</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Surat Aktif Kuliah</h3>
+          <p>Bukti bahwa kamu terdaftar aktif pada semester berjalan. Dipakai untuk beasiswa, tunjangan, atau administrasi lain.</p>
+          <p class="meta">Estimasi: 1 hari kerja</p>
+          <a class="btn btn-outline" href="#permohonan">Ajukan surat aktif kuliah</a>
+        </article>
+        <article class="card">
+          <h3>Transkrip Sementara</h3>
+          <p>Rekap mata kuliah dan nilai sampai semester terakhir. Cocok untuk melamar magang atau beasiswa.</p>
+          <p class="meta">Estimasi: 2 hari kerja</p>
+          <a class="btn btn-outline" href="#permohonan">Ajukan transkrip sementara</a>
+        </article>
+        <article class="card">
+          <h3>Cuti Akademik</h3>
+          <p>Berhenti kuliah sementara satu semester dengan status mahasiswa tetap terjaga. Wajib disertai alasan yang jelas.</p>
+          <p class="meta">Estimasi: 3 hari kerja</p>
+          <a class="btn btn-outline" href="#permohonan">Ajukan cuti akademik</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="permohonan" class="wrap" aria-labelledby="judul-form">
+      <h2 id="judul-form">Form permohonan layanan</h2>
+      <p class="hint">Kolom bertanda <span class="req" aria-hidden="true">*</span><span class="sr-only">bintang</span> wajib diisi.</p>
+
+      <form class="form" action="#" method="post">
+        <div class="field">
+          <label for="nama">Nama lengkap <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="nama" name="nama" autocomplete="name" required minlength="3" placeholder="Contoh: Siti Rahayu">
+        </div>
+
+        <div class="field">
+          <label for="nim">NIM <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="nim" name="nim" inputmode="numeric" required pattern="[0-9]{9}" maxlength="9" aria-describedby="nim-hint" placeholder="9 digit angka">
+          <p id="nim-hint" class="hint">Terdiri dari 9 digit angka.</p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint" placeholder="nama@email.com">
+          <p id="email-hint" class="hint">Kami kirim kabar proses permohonan ke alamat ini.</p>
+        </div>
+
+        <div class="field">
+          <label for="layanan-pilih">Jenis layanan <span class="req" aria-hidden="true">*</span></label>
+          <select id="layanan-pilih" name="layanan" required>
+            <option value="">Pilih layanan</option>
+            <option value="surat-aktif">Surat Aktif Kuliah</option>
+            <option value="transkrip">Transkrip Sementara</option>
+            <option value="cuti">Cuti Akademik</option>
+          </select>
+        </div>
+
+        <fieldset class="field">
+          <legend>Cara pengambilan dokumen <span class="req" aria-hidden="true">*</span></legend>
+          <label class="choice"><input type="radio" name="ambil" value="digital" required> Unduh versi digital</label>
+          <label class="choice"><input type="radio" name="ambil" value="cetak"> Ambil versi cetak di fakultas</label>
+        </fieldset>
+
+        <div class="field">
+          <label for="keperluan">Keperluan <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="keperluan" name="keperluan" rows="5" required minlength="10" maxlength="500" aria-describedby="keperluan-hint"></textarea>
+          <p id="keperluan-hint" class="hint">Jelaskan singkat untuk apa dokumen dipakai (10 sampai 500 karakter).</p>
+        </div>
+
+        <div class="field">
+          <label class="choice"><input type="checkbox" name="setuju" required> Saya menyatakan data di atas benar. <span class="req" aria-hidden="true">*</span></label>
+        </div>
+
+        <button type="submit" class="btn btn-solid">Kirim permohonan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Portal Layanan Akademik, Fakultas Sains dan Teknologi, Universitas Pattimura, Ambon.</p>
+      <p>Dibuat oleh Adnan Fahri Jauhari Putra Tuarita (NIM 202451051) untuk Tugas Membangun Web, Pertemuan 5.</p>
+    </div>
+  </footer>
+</body>
+</html>
