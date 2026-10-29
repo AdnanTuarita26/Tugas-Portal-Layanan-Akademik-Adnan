@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uji Responsif: Portal Layanan Akademik</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;padding:1rem;background:#EEF4F6;color:#1B2A30;line-height:1.5}
+  h1{font-size:1.25rem;color:#0B3C49;margin:0 0 .25rem}
+  p{margin:0 0 1rem}
+  section{margin-bottom:2rem}
+  h2{font-size:1.05rem;color:#0B3C49;margin:0 0 .25rem}
+  .hasil{font-weight:700;margin:0 0 .5rem}
+  .ok{color:#0B6B2E}.bad{color:#B3261E}
+  .box{background:#fff;border:2px solid #0B3C49;overflow:hidden;position:relative}
+  iframe{border:0;display:block;background:#fff;transform-origin:top left}
+</style>
+</head>
+<body>
+<h1>Uji responsif: Portal Layanan Akademik</h1>
+<p>Halaman bantu untuk bukti pengujian. Setiap bingkai memakai lebar viewport asli (360, 768, 1280 px), lalu ditampilkan diperkecil agar muat di layar. Pengecekan horizontal scroll dilakukan otomatis.</p>
+
+<section><h2>Viewport 360 px</h2><p class="hasil" id="h360">Memeriksa...</p><div class="box" id="b360"><iframe id="f360" src="index.html" title="Portal pada lebar 360 px" width="360" height="800"></iframe></div></section>
+<section><h2>Viewport 768 px</h2><p class="hasil" id="h768">Memeriksa...</p><div class="box" id="b768"><iframe id="f768" src="index.html" title="Portal pada lebar 768 px" width="768" height="900"></iframe></div></section>
+<section><h2>Viewport 1280 px</h2><p class="hasil" id="h1280">Memeriksa...</p><div class="box" id="b1280"><iframe id="f1280" src="index.html" title="Portal pada lebar 1280 px" width="1280" height="900"></iframe></div></section>
+
+<script>
+[360,768,1280].forEach(function(w){
+  var f=document.getElementById('f'+w), b=document.getElementById('b'+w), h=document.getElementById('h'+w);
+  function fit(){
+    var avail=document.body.clientWidth-32, s=Math.min(1,avail/w);
+    f.style.transform='scale('+s+')';
+    b.style.width=(w*s)+'px'; b.style.height=(parseInt(f.height,10)*s)+'px';
+  }
+  f.addEventListener('load',function(){
+    var d=f.contentDocument.documentElement;
+    var lebar=d.scrollWidth, tampak=d.clientWidth, over=lebar>tampak;
+    h.className='hasil '+(over?'bad':'ok');
+    h.textContent=(over?'Ada horizontal scroll':'Tidak ada horizontal scroll')+' (lebar konten '+lebar+' px, viewport '+tampak+' px)';
+  });
+  fit(); window.addEventListener('resize',fit);
+});
+</script>
+</body>
+</html>
